@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 91405634}
   - component: {fileID: 91405633}
   - component: {fileID: 91405632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThreadTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 233415839}
   - component: {fileID: 233415838}
   - component: {fileID: 233415837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 519605480}
   - component: {fileID: 519605484}
   - component: {fileID: 519605483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThreadTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 729074950}
   - component: {fileID: 729074949}
   - component: {fileID: 729074948}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 818898797}
   - component: {fileID: 818898796}
   - component: {fileID: 818898795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 1352758284}
   - component: {fileID: 1352758283}
   - component: {fileID: 1352758282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1516272165}
   - component: {fileID: 1516272164}
   - component: {fileID: 1516272163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThreadTest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1872,7 +1872,7 @@ GameObject:
   - component: {fileID: 1773565604}
   - component: {fileID: 1773565603}
   - component: {fileID: 1773565602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ThreadTest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2199,7 +2199,7 @@ GameObject:
   - component: {fileID: 1804947243}
   - component: {fileID: 1804947242}
   - component: {fileID: 1804947241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
