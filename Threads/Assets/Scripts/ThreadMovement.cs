@@ -10,13 +10,27 @@ public class ThreadMovement : MonoBehaviour
 
     Vector3 clickOffset = Vector3.zero;
     Vector3 gridOffset = Vector3.zero;
-
     Orientation orientation;
+
+    BoxCollider col;
+    float stoneHalfSize = 0f;
+    Vector3 validBackPos = Vector3.negativeInfinity;
+    Vector3 validFrontPos = Vector3.positiveInfinity;
 
     Vector3 targetPosition;
 
+    enum Orientation
+    {
+        NORTH,
+        EAST,
+        SOUTH,
+        WEST
+    }
+
     void Start()
     {
+        col = GetComponent<BoxCollider>();
+
         SetOrientation();
         SetGridOffset();
     }
@@ -30,6 +44,7 @@ public class ThreadMovement : MonoBehaviour
             clickOffset = transform.position - ray.GetPoint(planeDistance);
         }
 
+        GetValidMoveRange();
     }
 
     void OnMouseDrag()
@@ -40,6 +55,36 @@ public class ThreadMovement : MonoBehaviour
         {
            MoveThread(ray.GetPoint(planeDistance));
         }
+    }
+
+    void OnMouseUp()
+    {
+        validBackPos = Vector3.negativeInfinity;
+        validFrontPos = Vector3.positiveInfinity;
+    }
+
+    void GetValidMoveRange()
+    {
+        Ray ray = new Ray();
+        ray.origin = transform.position;
+        RaycastHit hit;
+        LayerMask wallMask = LayerMask.GetMask("Wall");
+
+        col.enabled = false;
+
+        ray.direction = transform.right;
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, wallMask))
+        {
+            validFrontPos = RoundVector(hit.point - transform.right * stoneHalfSize);
+        }
+
+        ray.direction = -transform.right;
+        if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, wallMask))
+        {
+            validBackPos = RoundVector(hit.point + transform.right * stoneHalfSize);
+        }
+
+        col.enabled = true;
     }
 
     void MoveThread(Vector3 screenPosition)
@@ -67,6 +112,14 @@ public class ThreadMovement : MonoBehaviour
         return RoundVector(pos);
     }
 
+    void SetGridOffset()
+    {
+        gridOffset = new Vector3(
+          Mathf.Abs(transform.position.x % 1f),
+          0f,
+          Mathf.Abs(transform.position.z % 1f)
+        );
+    }
 
     Vector3 SnapToGrid(Vector3 pos)
     {
@@ -85,23 +138,26 @@ public class ThreadMovement : MonoBehaviour
 
         float angle = Vector3.SignedAngle(worldFwd, localFwd, Vector3.up);
 
-        if (angle == 0)
+        if ((Mathf.Abs(angle) < 45) && Mathf.Abs(angle) >= 0)
             orientation = Orientation.EAST;
-        else if (angle == 90)
+        else if (angle > 45 && angle <= 135)
             orientation = Orientation.NORTH;
-        else if (angle == 180)
+        else if (Mathf.Abs(angle) > 135)
             orientation = Orientation.WEST;
         else
             orientation = Orientation.SOUTH;
-    }
 
-    void SetGridOffset()
-    {
-        gridOffset = new Vector3(
-          Mathf.Abs(transform.position.x % 1f),
-          0f,
-          Mathf.Abs(transform.position.z % 1f)
-        );
+        switch (orientation)
+        {
+            case Orientation.NORTH:
+            case Orientation.SOUTH:
+                stoneHalfSize = col.bounds.extents.z;
+                break;
+            case Orientation.EAST:
+            case Orientation.WEST:
+                stoneHalfSize = col.bounds.extents.x;
+                break;
+        }
     }
 
     Ray GetScreenPointToRay()
@@ -118,11 +174,31 @@ public class ThreadMovement : MonoBehaviour
         );
     }
 
-    enum Orientation
+    void ShowValidMoveRange()
     {
-        NORTH,
-        EAST,
-        SOUTH,
-        WEST
+        if (validBackPos != Vector3.negativeInfinity)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(validBackPos, .25f);
+        }
+
+        if (validFrontPos != Vector3.positiveInfinity)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(validFrontPos, .25f);
+        }
+
+        if (validBackPos != Vector3.negativeInfinity && validFrontPos != Vector3.positiveInfinity)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(validBackPos, validFrontPos);
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        ShowValidMoveRange();
+
+        //Gizmos.color = Color.yellow;
     }
 }
