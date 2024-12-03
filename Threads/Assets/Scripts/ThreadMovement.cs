@@ -91,7 +91,8 @@ public class ThreadMovement : MonoBehaviour
     {
         Vector3 offsetPosition = screenPosition + clickOffset;
         Vector3 lockedPosition = LockPositionToLocalForwardAxis(offsetPosition);
-        Vector3 gridPosition = SnapToGrid(lockedPosition);
+        Vector3 clampedPosition = ClampToValidPosition(lockedPosition);
+        Vector3 gridPosition = SnapToGrid(clampedPosition);
         transform.position = gridPosition;
     }
 
@@ -112,6 +113,29 @@ public class ThreadMovement : MonoBehaviour
         return RoundVector(pos);
     }
 
+    Vector3 ClampToValidPosition(Vector3 pos)
+    {
+        switch(orientation)
+        {
+            case Orientation.NORTH:
+                pos.z = Mathf.Clamp(pos.z, validBackPos.z, validFrontPos.z);
+                break;
+            case Orientation.SOUTH:
+                pos.z = Mathf.Clamp(pos.z, validFrontPos.z, validBackPos.z);
+                break;
+            case Orientation.EAST:
+                pos.x = Mathf.Clamp(pos.x, validBackPos.x, validFrontPos.x);
+                break;
+            case Orientation.WEST:
+                pos.x = Mathf.Clamp(pos.x, validFrontPos.x, validBackPos.x);
+                break;
+        }
+
+        return RoundVector(pos);
+    }
+
+
+        
     void SetGridOffset()
     {
         gridOffset = new Vector3(
