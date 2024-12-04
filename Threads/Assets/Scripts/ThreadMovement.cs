@@ -18,6 +18,8 @@ public class ThreadMovement : MonoBehaviour
     Vector3 validFrontPos = Vector3.positiveInfinity;
 
     Vector3 targetPosition;
+    Vector3 velocity = Vector3.zero;
+    float smoothTime = .1f;
 
     enum Orientation
     {
@@ -30,9 +32,15 @@ public class ThreadMovement : MonoBehaviour
     void Start()
     {
         col = GetComponent<BoxCollider>();
+        targetPosition = transform.position;
 
         SetOrientation();
         SetGridOffset();
+    }
+
+    void Update()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
     void OnMouseDown()
@@ -118,10 +126,10 @@ public class ThreadMovement : MonoBehaviour
         switch(orientation)
         {
             case Orientation.NORTH:
-                pos.z = Mathf.Clamp(pos.z, validBackPos.z, validFrontPos.z);
+                pos.z = Mathf.Clamp(pos.z, Mathf.Min(validBackPos.z, validFrontPos.z), Mathf.Max(validBackPos.z, validFrontPos.z));
                 break;
             case Orientation.SOUTH:
-                pos.z = Mathf.Clamp(pos.z, validFrontPos.z, validBackPos.z);
+                pos.z = Mathf.Clamp(pos.z, Mathf.Min(validFrontPos.z, validBackPos.z), Mathf.Max(validFrontPos.z, validBackPos.z));
                 break;
             case Orientation.EAST:
                 pos.x = Mathf.Clamp(pos.x, validBackPos.x, validFrontPos.x);
