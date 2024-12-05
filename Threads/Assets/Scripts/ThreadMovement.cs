@@ -21,6 +21,8 @@ public class ThreadMovement : MonoBehaviour
     Vector3 velocity = Vector3.zero;
     float smoothTime = .1f;
 
+    //bool inputEnabled = true;
+
     enum Orientation
     {
         NORTH,
@@ -45,6 +47,8 @@ public class ThreadMovement : MonoBehaviour
 
     void OnMouseDown()
     {
+        //if (!inputEnabled) return;
+
         Ray ray = GetScreenPointToRay();
 
         if (clickPlane.Raycast(ray, out planeDistance))
@@ -57,6 +61,8 @@ public class ThreadMovement : MonoBehaviour
 
     void OnMouseDrag()
     {
+        //if (!inputEnabled) return;
+
         Ray ray = GetScreenPointToRay();
 
         if (clickPlane.Raycast(ray, out planeDistance))
@@ -67,8 +73,12 @@ public class ThreadMovement : MonoBehaviour
 
     void OnMouseUp()
     {
+        //if (!inputEnabled) return;
+
         validBackPos = Vector3.negativeInfinity;
         validFrontPos = Vector3.positiveInfinity;
+
+        targetPosition = transform.position;
     }
 
     void GetValidMoveRange()
@@ -226,6 +236,11 @@ public class ThreadMovement : MonoBehaviour
             Gizmos.DrawLine(validBackPos, validFrontPos);
         }
     }
+
+    //public void DisableInput()
+    //{
+    //    inputEnabled = false;
+    //}
 
     void OnDrawGizmos()
     {
