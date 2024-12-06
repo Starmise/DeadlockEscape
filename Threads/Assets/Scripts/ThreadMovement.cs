@@ -42,7 +42,7 @@ public class ThreadMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 
     void OnMouseDown()
