@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 
+enum Orientation
+{
+    NORTH,
+    EAST,
+    SOUTH,
+    WEST
+}
+
 public class ThreadMovement : MonoBehaviour
 {
     Plane clickPlane = new Plane(Vector3.up, Vector3.zero);
@@ -22,14 +30,6 @@ public class ThreadMovement : MonoBehaviour
     float smoothTime = .1f;
 
     //bool inputEnabled = true;
-
-    enum Orientation
-    {
-        NORTH,
-        EAST,
-        SOUTH,
-        WEST
-    }
 
     void Start()
     {
@@ -78,7 +78,7 @@ public class ThreadMovement : MonoBehaviour
         validBackPos = Vector3.negativeInfinity;
         validFrontPos = Vector3.positiveInfinity;
 
-        targetPosition = transform.position;
+        //targetPosition = transform.position;
     }
 
     void GetValidMoveRange()
@@ -142,7 +142,7 @@ public class ThreadMovement : MonoBehaviour
                 pos.z = Mathf.Clamp(pos.z, Mathf.Min(validFrontPos.z, validBackPos.z), Mathf.Max(validFrontPos.z, validBackPos.z));
                 break;
             case Orientation.EAST:
-              pos.x = Mathf.Clamp(pos.x, Mathf.Min(validFrontPos.x, validBackPos.x), Mathf.Max(validFrontPos.x, validBackPos.x));
+              pos.x = Mathf.Clamp(pos.x, Mathf.Min(validBackPos.x, validFrontPos.x), Mathf.Max(validBackPos.x, validFrontPos.x));
                 break;
             case Orientation.WEST:
                 pos.x = Mathf.Clamp(pos.x, Mathf.Min(validFrontPos.x, validBackPos.x), Mathf.Max(validFrontPos.x, validBackPos.x));
@@ -152,8 +152,6 @@ public class ThreadMovement : MonoBehaviour
         return RoundVector(pos);
     }
 
-
-        
     void SetGridOffset()
     {
         gridOffset = new Vector3(
@@ -236,11 +234,6 @@ public class ThreadMovement : MonoBehaviour
             Gizmos.DrawLine(validBackPos, validFrontPos);
         }
     }
-
-    //public void DisableInput()
-    //{
-    //    inputEnabled = false;
-    //}
 
     void OnDrawGizmos()
     {
