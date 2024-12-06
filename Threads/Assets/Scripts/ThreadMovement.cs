@@ -142,10 +142,10 @@ public class ThreadMovement : MonoBehaviour
                 pos.z = Mathf.Clamp(pos.z, Mathf.Min(validFrontPos.z, validBackPos.z), Mathf.Max(validFrontPos.z, validBackPos.z));
                 break;
             case Orientation.EAST:
-                pos.x = Mathf.Clamp(pos.x, validBackPos.x, validFrontPos.x);
+              pos.x = Mathf.Clamp(pos.x, Mathf.Min(validFrontPos.x, validBackPos.x), Mathf.Max(validFrontPos.x, validBackPos.x));
                 break;
             case Orientation.WEST:
-                pos.x = Mathf.Clamp(pos.x, validFrontPos.x, validBackPos.x);
+                pos.x = Mathf.Clamp(pos.x, Mathf.Min(validFrontPos.x, validBackPos.x), Mathf.Max(validFrontPos.x, validBackPos.x));
                 break;
         }
 
