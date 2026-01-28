@@ -443,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252412884}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.09, y: 0.5, z: -1.53}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -679,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304662198}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.59, y: 0.5, z: -2.57}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -864,7 +864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4fa030edfa9724449a28b4bebe9c5f02, type: 2}
+  - {fileID: 2100000, guid: 0aaf26951fd2eaa468f4dbf1e9cadf35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1020,7 +1020,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 88e1b193142e96a488012d5a2c7e61d3, type: 2}
+  - {fileID: 2100000, guid: 20ad64daea8a22f4ca3617b38b2376bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1796,7 +1796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe4ffb415ec4563469b52feb99346da4, type: 2}
+  - {fileID: 2100000, guid: 5bc12e993f9a87a4cb9c34c4fb89c389, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2401,7 +2401,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c473b65f60d7ecb48ba9ad7fbf03b9aa, type: 2}
+  - {fileID: 2100000, guid: 419e0fa5861ed8540b607141f6859d25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2439,7 +2439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517451157}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.11, y: 0.5, z: 2.6}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

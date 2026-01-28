@@ -195,7 +195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 88e1b193142e96a488012d5a2c7e61d3, type: 2}
+  - {fileID: 2100000, guid: 5bc12e993f9a87a4cb9c34c4fb89c389, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -580,7 +580,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4fa030edfa9724449a28b4bebe9c5f02, type: 2}
+  - {fileID: 2100000, guid: 7466b2693eea9ed4fa12101ac8530516, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -741,6 +741,7 @@ GameObject:
   - component: {fileID: 379732596}
   - component: {fileID: 379732595}
   - component: {fileID: 379732594}
+  - component: {fileID: 379732597}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -822,6 +823,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 85, y: 0, z: 0}
+--- !u!114 &379732597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379732593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &386195295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1045,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 694acad46f9781b459650a6cd43e7bc4, type: 2}
+  - {fileID: 2100000, guid: 9187e140cb8aac24baa3aaf5b5b2867a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1038,8 +1083,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573082276}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.5, z: -2.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.54, y: 0.5, z: -2.55}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2022,7 +2067,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe4ffb415ec4563469b52feb99346da4, type: 2}
+  - {fileID: 2100000, guid: 419e0fa5861ed8540b607141f6859d25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2140,7 +2185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22cff093ef60798419ce28bde297d99a, type: 2}
+  - {fileID: 2100000, guid: 0aaf26951fd2eaa468f4dbf1e9cadf35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2178,8 +2223,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537468470}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5, z: 2.56}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.02, y: 0.5, z: 2.56}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3045,15 +3090,15 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 379732596}
+  - {fileID: 749822697}
+  - {fileID: 892043226}
   - {fileID: 1603705086}
   - {fileID: 1537468475}
-  - {fileID: 1688899676}
   - {fileID: 1528109300}
-  - {fileID: 379732596}
   - {fileID: 52924973}
-  - {fileID: 892043226}
   - {fileID: 284059401}
   - {fileID: 573082281}
-  - {fileID: 749822697}
   - {fileID: 749808191}
   - {fileID: 182101004}
+  - {fileID: 1688899676}

@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 6624796532596448610}
   - component: {fileID: 4151191418135801308}
   - component: {fileID: 829590671390707150}
+  - component: {fileID: 7415242387689923734}
   - component: {fileID: 1959571365627337201}
   m_Layer: 6
   m_Name: ThreadPlayer
@@ -202,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123840426347307567}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.05, y: 0.5, z: 0.5}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -293,6 +294,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3022d128ad8c00549a3b9eb12e53eea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  orientation: 0
+  length: 2
+  gridX: 0
+  gridZ: 0
+--- !u!114 &7415242387689923734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123840426347307567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc89c6bf5468948498ff8efd08d08b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 6
+  height: 6
 --- !u!54 &1959571365627337201
 Rigidbody:
   m_ObjectHideFlags: 0
